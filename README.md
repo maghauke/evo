@@ -1,3 +1,32 @@
+# Docking plots
+
+First record a rosbag with the pose topics, and tf topic after ORBSLAM3 has initialized
+- Example:
+```
+rosbag record /orb_slam3_ros/camera /tf /milliampere/pose -O orbslam3_estimate.bag
+
+```
+Then use evo commands to e.g. plot:
+
+```
+evo_traj bag /home/maghauke/VSLAM/rosbags/orbslam3_estimate.bag /orb_slam3_ros/camera --ref /milliampere/pose -as -p --plot_mode xy
+```
+
+Plotting with map:
+
+First run (assuming rosbag with /radar/detector/occupancy_grid topic playing) :
+
+```
+rosrun map_server map_saver -f mymap map:=/radar/detector/occupancy_grid
+```
+to genereate mymap.yaml and mymap.pgm files
+
+Then plot with:
+
+```
+evo_rpe bag /home/maghauke/VSLAM/rosbags/orbslam3_estimate.bag /milliampere/pose /orb_slam3_ros/camera --pose_relation angle_deg --delta 1 --delta_unit m -as -p --plot_mode xy --ros_map_yaml mymap.yaml 
+```
+
 # evo 
 
 ***Python package for the evaluation of odometry and SLAM***
