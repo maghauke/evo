@@ -13,7 +13,9 @@ Then use evo commands to e.g. plot:
 ```
 evo_traj bag /home/maghauke/VSLAM/rosbags/orbslam3_estimate.bag /orb_slam3_ros/camera --ref /milliampere/pose -as -p --plot_mode xy
 
-evo_traj bag /home/maghauke/VSLAM/rosbags/gerhardensen_2_1.bag /orb_slam3_ros/camera --ref /navigation/pose -as -p --plot_mode xy
+evo_traj bag /home/maghauke/VSLAM/rosbags/gerhardsen_2_1.bag /orb_slam3_ros/camera --ref /navigation/pose -as -p --plot_mode xy
+
+evo_rpe bag /home/maghauke/VSLAM/rosbags/gerhardsen_2_1.bag /navigation/pose /orb_slam3_ros/camera --pose_relation angle_deg --delta 1 --delta_unit m -as -p --plot_mode xy
 
 ```
 
