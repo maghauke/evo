@@ -5,11 +5,16 @@ First record a rosbag with the pose topics, and tf topic after ORBSLAM3 has init
 ```
 rosbag record /orb_slam3_ros/camera /tf /milliampere/pose -O orbslam3_estimate.bag
 
+rosbag record /orb_slam3_ros/camera /tf /navigation/pose -O gerhardsen_2_1.bag
+
 ```
 Then use evo commands to e.g. plot:
 
 ```
 evo_traj bag /home/maghauke/VSLAM/rosbags/orbslam3_estimate.bag /orb_slam3_ros/camera --ref /milliampere/pose -as -p --plot_mode xy
+
+evo_traj bag /home/maghauke/VSLAM/rosbags/gerhardensen_2_1.bag /orb_slam3_ros/camera --ref /navigation/pose -as -p --plot_mode xy
+
 ```
 
 Plotting with map:
