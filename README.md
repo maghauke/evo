@@ -17,6 +17,8 @@ evo_traj bag /home/maghauke/VSLAM/rosbags/gerhardsen_2_1.bag /orb_slam3_ros/came
 
 evo_rpe bag /home/maghauke/VSLAM/rosbags/gerhardsen_2_1.bag /navigation/pose /orb_slam3_ros/camera --pose_relation angle_deg --delta 1 --delta_unit m -as -p --plot_mode xy
 
+evo_ape bag /home/maghauke/VSLAM/rosbags/gerhardsen_2_1.bag /navigation/pose /orb_slam3_ros/camera -as -p --plot_mode xy
+
 ```
 
 Plotting with map:
