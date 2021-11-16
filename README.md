@@ -7,6 +7,8 @@ rosbag record /orb_slam3_ros/camera /tf /milliampere/pose -O orbslam3_estimate.b
 
 rosbag record /orb_slam3_ros/camera /tf /navigation/pose -O gerhardsen_2_1.bag
 
+rosbag record /orb_slam3_ros/camera /tf /navigation/pose -O gerhardsen_1_1_stereo.bag
+
 ```
 Then use evo commands to e.g. plot:
 
